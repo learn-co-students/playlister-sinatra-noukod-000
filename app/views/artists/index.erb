@@ -1,0 +1,14 @@
+<h1>All Artists </h1>
+
+<table>
+  <thead>
+    <th> Name </th>
+  </thead>
+  <tbody>
+    <% @artists.each do |artist| %>
+    <tr>
+      <td> <a href="/artists/<%= artist.slug %>"><%= artist.name %></a> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

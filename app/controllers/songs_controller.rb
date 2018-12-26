@@ -23,6 +23,7 @@ class SongsController < ApplicationController
     # binding.pry
     song = Song.create params[:song]
     song.artist = Artist.find_or_create_by params[:artist]
+    song.genres << Genre.create(params[:genre]) if !params[:genre][:name].empty?
     song.save
 
     flash[:message] = "Successfully created song."

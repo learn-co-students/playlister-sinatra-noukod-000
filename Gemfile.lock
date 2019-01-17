@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/bmabey/database_cleaner.git
-  revision: a8d68a8b253d2ab5fcc07175db4ade27b6494d5b
+  revision: b393fa81fc864805e79913f4377e316be40f8900
   specs:
-    database_cleaner (1.7.0)
+    database_cleaner (1.6.3)
 
 GEM
   remote: http://rubygems.org/
@@ -24,18 +24,18 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (6.0.4)
     builder (3.2.3)
-    capybara (3.1.0)
+    capybara (2.18.0)
       addressable
       mini_mime (>= 0.1.3)
-      nokogiri (~> 1.8)
-      rack (>= 1.6.0)
-      rack-test (>= 0.6.3)
-      xpath (~> 3.0)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (>= 2.0, < 4.0)
     coderay (1.1.2)
-    concurrent-ruby (1.0.5)
+    concurrent-ruby (1.1.4)
     daemons (1.2.6)
     diff-lcs (1.3)
-    eventmachine (1.2.7)
+    eventmachine (1.2.5)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     json (1.8.6)
@@ -50,13 +50,15 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (3.0.2)
-    rack (2.0.5)
+    rack (2.0.4)
+    rack-flash3 (1.0.5)
+      rack
     rack-protection (2.0.1)
       rack
-    rack-test (1.0.0)
+    rack-test (0.8.3)
       rack (>= 1.0, < 3)
-    rake (12.3.1)
-    require_all (2.0.0)
+    rake (12.3.0)
+    require_all (1.5.0)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -100,6 +102,7 @@ DEPENDENCIES
   capybara
   database_cleaner!
   pry
+  rack-flash3
   rack-test
   rake
   require_all
@@ -111,4 +114,4 @@ DEPENDENCIES
   thin
 
 BUNDLED WITH
-   1.16.0
+   1.17.3

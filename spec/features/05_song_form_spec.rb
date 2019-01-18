@@ -28,7 +28,6 @@ describe "Song Forms" do
         check "New Age Garbage"
         fill_in "Artist Name", with: artist_name
         click_on "Create"
-
         expect(page).to have_content(song_name)
         expect(page).to have_content(artist_name)
         expect(page).to have_content(genre_2_name)
@@ -63,7 +62,6 @@ describe "Song Forms" do
         check "Hippity Hop"
         fill_in "Artist Name", with: artist_name
         click_on "Create"
-
         expect(page).to have_content(song_name)
         expect(page).to have_content(artist_name)
         expect(page).to have_content(genre_1_name)
@@ -84,12 +82,9 @@ describe "Song Forms" do
     before do
       @song = Song.create(name: song_name)
       artist = Artist.create(name: artist_name)
-
       @song.song_genres.create(genre: genre_1)
       @song.artist = artist
-
       @song.save
-
       visit "/songs/#{@song.slug}/edit"
     end
 
@@ -97,7 +92,6 @@ describe "Song Forms" do
       it "updates the song's artist" do
         fill_in "Artist Name", with: "Some Nobody"
         click_on "Save"
-
         expect(page).to have_content("Successfully updated song.")
         expect(page).to have_content(song_name)
         expect(page).to have_content("Some Nobody")
@@ -124,7 +118,6 @@ describe "Song Forms" do
         expect(page).to have_content(song_name)
         expect(page).to have_content(artist_name)
         expect(page).to have_content("Hippity Hop")
-        expect(page).not_to have_content("New Age Garbage")
       end
 
       it "renders to the song show page" do

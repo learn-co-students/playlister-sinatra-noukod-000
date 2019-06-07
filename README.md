@@ -1,6 +1,10 @@
 # Sinatra Playlister
 
+<<<<<<< HEAD
 ## Objectives
+=======
+##Objectives
+>>>>>>> 9632ee844d4e1a04c0fd36cb603c1325dc07741d
 
 * Solidify your ActiveRecord understanding
 * Build out basic views for all your models
@@ -123,7 +127,11 @@ In order to create a check box of all the genres on a new song form, you'll need
 
 The value attribute should be set to the genre id.
 
+<<<<<<< HEAD
 The name attribute should be set to `genres[]` because we're dealing with a collection of attributes. This will make the params hash look like this:
+=======
+The name attribute should be set to set to `genres[]` because we're dealing with a collection of attributes. This will make the params hash look like this:
+>>>>>>> 9632ee844d4e1a04c0fd36cb603c1325dc07741d
 
 ```ruby
 params = {

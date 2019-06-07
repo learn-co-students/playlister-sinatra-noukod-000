@@ -124,10 +124,6 @@ describe "Song Forms" do
         expect(page).to have_content(song_name)
         expect(page).to have_content(artist_name)
         expect(page).to have_content("Hippity Hop")
-<<<<<<< HEAD
-        expect(page).not_to have_content("New Age Garbage")
-=======
->>>>>>> 9632ee844d4e1a04c0fd36cb603c1325dc07741d
       end
 
       it "renders to the song show page" do

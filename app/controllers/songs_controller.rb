@@ -14,14 +14,17 @@ class SongsController < ApplicationController
        @song = Song.create(:name => params[:song][:name])
 
        artist_entry = params[:song][:artist]
+
        if Artist.find_by(:name => artist_entry)
          artist = Artist.find_by(:name => artist_entry)
        else
          artist = Artist.create(:name => artist_entry)
        end
+
        @song.artist = artist
 
        genre_selections = params[:song][:genres]
+
        genre_selections.each do |genre|
          @song.genres << Genre.find(genre)
        end
@@ -33,8 +36,37 @@ class SongsController < ApplicationController
      end
 
     get '/songs/:slug' do
-    @song = Song.find_by_slug(params[:slug])
-    erb :'songs/show'
+      @song = Song.find_by_slug(params[:slug])
+      erb :'songs/show'
     end
 
+    get '/songs/:slug/edit' do
+      @song = Song.find_by_slug(params[:slug])
+      erb 'songs/edit'.to_sym
+    end
+
+    patch '/songs/:slug' do
+        song = Song.find_by_slug(params[:slug])
+        song.name = params[:song][:name]
+
+        artist_name = params[:song][:artist]
+        if Artist.find_by(:name => artist_name)
+          if song.artist.name != artist_name
+            song.artist = Artist.find_by(:name => artist_name)
+          end
+        else
+          song.artist = Artist.create(:name => artist_name)
+        end
+
+        if song.genres
+          song.genres.clear
+        end
+        genres = params[:song][:genres]
+        genres.each do |genre|
+          song.genres << Genre.find(genre)
+        end
+        song.save
+        flash[:message] = "Successfully updated song."
+        redirect to "songs/#{song.slug}"
+      end
 end

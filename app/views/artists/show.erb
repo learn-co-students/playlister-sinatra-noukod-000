@@ -1,6 +1,6 @@
 <%@artist.songs.each do |el|%>
-  <p><a href="/songs/el.slug"><%=el.name%></a></p>
+  <p><a href="/songs/<%=el.slug%>"><%=el.name%></a></p>
 <% end %>
  <%@artist.genres.each do |el|%>
-   <p><a href="/genres/el.slug"><%=el.name%></a></p>
+   <p><a href="/genres/<%=el.slug%>"><%=el.name%></a></p>
  <% end %>

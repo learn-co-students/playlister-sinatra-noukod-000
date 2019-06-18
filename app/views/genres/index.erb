@@ -1,0 +1,9 @@
+<h1>All the genres</h1>
+
+<% if @genres.any? %>
+<ul>
+  <% @genres.each do |genre| %>
+  <li><%= genre.name %> <a href="/genres/<%= genre.slug %>">View Details</a></li>
+  <% end %>
+</ul>
+<% end %>

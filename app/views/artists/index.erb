@@ -1,0 +1,9 @@
+<h1>All the artists</h1>
+
+<% if @artists.any? %>
+<ul>
+  <% @artists.each do |artist| %>
+  <li><%= artist.name %> <a href="/artists/<%= artist.slug %>">View Details</a></li>
+  <% end %>
+</ul>
+<% end %>

@@ -143,7 +143,7 @@ You can add a flash message for when a new instance is created. Let's take a new
 
 First, add `gem 'rack-flash3'` to the Gemfile; run `bundle` to install it.
 
-You can see in Rack Flash's [Sinatra](https://github.com/treeder/rack-flash#sinatra)
+You can see in Rack Flash's [Sinatra]()
 section the basics for getting flash messages working with Sinatra.
 
 (Note: You'll need to `enable :sessions` for your application and `use Rack::Flash`
